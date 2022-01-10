@@ -52,7 +52,7 @@ def download(name):
   except NotFound:
       return jsonify({"message":"Arquivo invalido"}),404
             
-@app.get("/download-zip/query_params")
+@app.get("/download-zip")
 def download_zip():
     file=request.args.get("file_extension")
     compression_ratio=request.args.get("compression_ratio")

@@ -53,7 +53,10 @@ def get_specif_dir(extension):
                 return jsonify(filename)
     raise UnsupportedMediaType
 def download_file(name,extension):
-     diretorio_download=f'/home/daniel/Kenzie/Python/q3-sprint2-e6-banco-de-imagens-daniell18/imagens/Dir{extension}'
+     if(name.rsplit('.', 1)[1].lower() == "zip"):
+         diretorio_download=f'/home/daniel/Kenzie/Python/q3-sprint2-e6-banco-de-imagens-daniell18/zip'
+     else :
+          diretorio_download=f'/home/daniel/Kenzie/Python/q3-sprint2-e6-banco-de-imagens-daniell18/imagens/Dir{extension}'
      return send_from_directory(
       directory=diretorio_download,
       path=name, 
