@@ -49,7 +49,7 @@ def get_all_files():
         return list_all_files
 def get_specif_dir(extension):
     if(extension in extensions):
-        for dirpath,dirnam,filename in os.walk(f'/home/daniel/Kenzie/Python/q3-sprint2-e6-banco-de-imagens-daniell18/imagens/Dir{extension.lower()}'):  
+        for dirpath,dirname,filename in os.walk(f'/home/daniel/Kenzie/Python/q3-sprint2-e6-banco-de-imagens-daniell18/imagens/Dir{extension.lower()}'):  
                 return jsonify(filename)
     raise UnsupportedMediaType
 def download_file(name,extension):
